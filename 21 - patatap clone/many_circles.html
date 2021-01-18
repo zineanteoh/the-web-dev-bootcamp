@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Circles</title>
+	<script type="text/javascript" src="paper-full.js"></script>
+	<link rel="stylesheet" type="text/css" href="many_circles.css">
+	<script type="text/paperscript" canvas="myCanvas">
+
+		console.log(screen.width);
+		console.log(screen.height);
+		var radius = 10;
+		var gap = 50;
+
+		for(var i = 1; i < screen.width; i+=gap) {
+			for(var j = 1; j < screen.height; j+=gap) {
+				var circle = new Path.Circle(new Point(i, j), radius);
+				// circle.fillColor = randomColor();
+				circle.fillColor = weirdGradient(i, j);
+			}
+		}
+
+		function randomColor() {
+			var r = Math.floor(Math.random() * 256);
+			var g = Math.floor(Math.random() * 256);
+			var b = Math.floor(Math.random() * 256);
+			return "rgb(" + r + ", " + g + ", " + b + ")";
+		}
+
+		function weirdGradient(i, j) {
+			// start with r = 0% first
+			// 1920 / 50 = 38.4
+			// 1080 / 50 = 21.6
+			// (i / gap)th horizontal circles 
+			// (j / gap)th vertical circles 
+			var rand1 = Math.floor(Math.random() * 2); // produces 0, 1
+			var rand2 = Math.floor(Math.random() * 2); // produces 0, 1
+			var r = Math.floor(256 / ((rand1*i) / gap / 5));
+			var g = Math.floor(256 / ((rand2*j) / gap / 5));
+			var b = Math.floor(256 / ((rand1*j + rand2*i) / gap / 5));
+			return "rgb(" + r + ", " + g + ", " + b + ")";
+		}
+
+	</script>
+
+</head>
+<body>
+	<canvas id="myCanvas" resize></canvas>
+</body>
+</html>
