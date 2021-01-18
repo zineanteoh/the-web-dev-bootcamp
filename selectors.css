@@ -1,0 +1,43 @@
+/*Elements*/
+li {
+
+}
+
+/*Class - multiple elements*/
+.hoverable:hover{
+	background: green;
+}
+
+/*id - one element only*/
+#name {
+
+}
+
+/*star - all elements on the page*/
+* {
+border: 1px solid lightgrey;
+}
+
+/*descendant selectors - all elements that are descendants of some elements */
+/*i.e. every a tag that is inside of li that is inside of ul*/
+ul li a {
+	color: red;
+}
+
+/*adjacent selectors - all elements that are siblings of some elements*/
+/*i.e. every ul that are adjacent to (same level as) h4 */
+h4 + ul {
+	border: 4px solid red;
+}
+
+/*attribute selector - elements of particular attributes */
+/*i.e. every a tag with attributes inside [] */
+a[href="https://www.google.com"] {
+	background: blue;
+}
+
+/*nth of type - select every nth elements */
+/*i.e. the 2nd ul tag*/
+li:nth-of-type(3) {
+	background: purple;
+}

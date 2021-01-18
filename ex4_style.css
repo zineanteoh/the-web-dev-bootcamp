@@ -1,0 +1,38 @@
+/* body has 20px border around with some width */
+
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	border: 20px solid #bdc3c7;
+	/* set the width to be 80% of window by default*/
+	width: 80%;
+	/* cap it at 700px */
+	max-width: 700px;
+
+	/* padding - this inside */
+	padding: 20px; 
+	/* margin - the outside */
+	margin: 20px auto;
+}
+
+/* a p that follows a h2 */
+h2 + p {
+	border-left: 7px solid #bdc3c7;
+	padding-left: 5px;
+}
+
+.date {
+	color: #349bdb;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+h2 {
+	color: #2c3e50;
+	font-weight: 700;
+}
+
+hr {
+	color: #349bdb;
+}
+
+
